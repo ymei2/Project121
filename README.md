@@ -8,3 +8,8 @@ todo list:
 remove duplicates: lecture 11, ->calculate sum 
 Using NLTK -> TREC & porter stemming(处理过去式 以及各种变型) //处理不到 's
 </p>
+
+
+
+structure:
+   token dictionary 可以有三个：
