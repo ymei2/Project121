@@ -4,6 +4,7 @@ import re
 from bs4 import BeautifulSoup
 from nltk.stem import PorterStemmer
 
+
 def tokenizer(content):
     return re.findall(r"[A-Za-z0-9]+", content.lower())
 
