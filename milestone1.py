@@ -43,7 +43,9 @@ def geturl_dic(folder):
     count1 = 0
     for (root, dirs, files) in os.walk(folder):
         count1 += len(files)
-        stop_pos = count1 // 3
+
+    stop_pos = count1 // 3
+    print(count1,stop_pos)
 
     count2 = 0
     num_pindex = 1
@@ -65,18 +67,15 @@ def geturl_dic(folder):
                     docid = docid_url[url]
 
                 #store index into three
-                if num_pindex == 3:
-                    continue
-                elif count2 > stop_pos:
+                if count2 > stop_pos and num_pindex != 3:
                     jsonfile(inverted_index,num_pindex)
                     num_pindex += 1
                     count2 = 0
                     inverted_index = {}
-
                 indexing(docid,content,inverted_index)
             except ValueError as e:
                 print(e)
-
+    print(docid_url)
     jsonfile(inverted_index,num_pindex)
 
 def jsonfile(invert_index, num_pindex):
@@ -93,4 +92,3 @@ def tag_visible(element):
 
 if __name__ == '__main__':
     geturl_dic("/Users/mac/Desktop/Test")
-
