@@ -83,6 +83,11 @@ def jsonfile(invert_index, num_pindex):
         line = json.dumps(invert_index)
         f.write(line)
 
+def tag_important(element):
+    if element.parent.name in ['b', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6','strong', 'title']:
+        return True
+    return False
+
 def tag_visible(element):
     if element.parent.name in ['style', 'script', 'head', 'title', 'meta', '[document]']:
         return False
